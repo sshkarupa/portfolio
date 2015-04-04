@@ -1,0 +1,23 @@
+doctype html
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+html(lang="ru" class="no-js")
+  <!--<![endif]-->
+
+  head
+    block title
+
+    include ./includes/meta-links.jade
+
+  body
+
+    include ./includes/aside.jade
+
+    block content
+
+    .loader
+      .loader_inner
+
+    include ./includes/scripts.jade

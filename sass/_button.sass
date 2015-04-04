@@ -1,0 +1,57 @@
+@mixin transform($rotate)
+  -webkit-transform: rotate($rotate)
+  -ms-transform: rotate($rotate)
+  -o-transform: rotate($rotate)
+  transform: rotate($rotate)
+
+@mixin transition($property, $time)
+  -webkit-transition: $property $time
+  -moz-transition: $property $time
+  -ms-transition: $property $time
+  -o-transition: $property $time
+  transition: $property $time
+
+
+
+.btn_mnu
+  width: 50px
+  height: 50px
+  display: -webkit-flex
+  display: -moz-flex
+  display: -ms-flex
+  display: -o-flex
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  background-color: tomato
+  cursor: pointer
+  position: relative
+
+.btn_row
+  height: 2px
+  width: 60%
+  margin: 2px 0
+  background-color: white
+  position: relative
+  @include transition(all, 0.5s)
+
+.btn_mnu.active .btn_row:first-child
+  @include transform(-135deg)
+  top: 6px
+
+.btn_mnu.active .btn_row:last-child
+  @include transform(-225deg)
+  top: -6px
+
+.btn_mnu.active .btn_row:nth-child(2)
+  opacity: 0
+
+// customisation
+.btn_mnu
+  float: right
+  @include transition(all, 0.5s)
+
+.btn_mnu.active
+  background-color: transparent
+
