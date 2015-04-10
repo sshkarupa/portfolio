@@ -2,7 +2,7 @@
 
 Adaptive and animated HTML+CSS template + WordPress theme for cool portfolio.
 
-###What was used:
+### What was used:
 * WordPress: https://ru.wordpress.org/
 * Sublime Text: http://www.sublimetext.com/
 * Jade http://jade-lang.com
@@ -15,3 +15,6 @@ Adaptive and animated HTML+CSS template + WordPress theme for cool portfolio.
 * NiceScroll: http://areaaperta.com/nicescroll/
 * Google Fonts: http://www.google.com/fonts
 * Lazy Load: http://www.appelsiini.net/projects/lazyload
+
+### Demo:
+http://sshkarupa.github.io/portfolio/
