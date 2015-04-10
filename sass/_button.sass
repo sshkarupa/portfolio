@@ -1,26 +1,8 @@
-@mixin transform($rotate)
-  -webkit-transform: rotate($rotate)
-  -ms-transform: rotate($rotate)
-  -o-transform: rotate($rotate)
-  transform: rotate($rotate)
-
-@mixin transition($property, $time)
-  -webkit-transition: $property $time
-  -moz-transition: $property $time
-  -ms-transition: $property $time
-  -o-transition: $property $time
-  transition: $property $time
-
-
 
 .btn_mnu
   width: 50px
   height: 50px
-  display: -webkit-flex
-  display: -moz-flex
-  display: -ms-flex
-  display: -o-flex
-  display: flex
+  @include display-flex
   flex-direction: column
   align-items: center
   justify-content: center
@@ -37,11 +19,11 @@
   @include transition(all, 0.5s)
 
 .btn_mnu.active .btn_row:first-child
-  @include transform(-135deg)
+  @include rotate(-135)
   top: 6px
 
 .btn_mnu.active .btn_row:last-child
-  @include transform(-225deg)
+  @include rotate(-225)
   top: -6px
 
 .btn_mnu.active .btn_row:nth-child(2)

@@ -3,45 +3,55 @@ extends /layout
 block title
   title Портфолио
 
-block content
-  .content.gallery
-    mixin pic (num, tag)
-      a(href="images/#{num}.jpg")
-        img(src="images/#{num}.jpg", alt="Alt")
+block body
+  body
+    include /includes/aside.jade
 
-    +pic(1,"")
-    +pic(2,"")
-    +pic(3,"")
-    +pic(4,"")
-    +pic(5,"")
-    +pic(6,"")
-    +pic(7,"")
-    +pic(8,"")
-    +pic(9,"")
-    +pic(10,"")
-    +pic(11,"")
-    +pic(12,"")
-    +pic(13,"")
-    +pic(14,"")
-    +pic(15,"")
-    +pic(16,"")
-    +pic(1,"")
-    +pic(2,"")
-    +pic(3,"")
-    +pic(4,"")
-    +pic(5,"")
-    +pic(6,"")
-    +pic(7,"")
-    +pic(8,"")
-    +pic(9,"")
-    +pic(10,"")
-    +pic(11,"")
-    +pic(12,"")
-    +pic(13,"")
-    +pic(14,"")
-    +pic(15,"")
-    +pic(16,"")
+    .content.gallery
+      mixin pic (num, tag)
+        a(href="images/#{num}.jpg" class=tag)
+          img(src="images/dummy.png" data-original="images/#{num}.jpg", alt="Alt")
 
-  .hidden
+      +pic(1,"wedding")
+      +pic(2,"birthday")
+      +pic(3,"birthday")
+      +pic(4,"wedding")
+      +pic(5,"wedding")
+      +pic(6,"birthday")
+      +pic(7,"birthday")
+      +pic(8,"birthday")
+      +pic(9,"wedding")
+      +pic(10,"birthday")
+      +pic(11,"birthday")
+      +pic(12,"birthday")
+      +pic(13,"birthday")
+      +pic(14,"wedding")
+      +pic(15,"birthday")
+      +pic(16,"wedding")
 
+      +pic(1,"wedding")
+      +pic(2,"birthday")
+      +pic(3,"birthday")
+      +pic(4,"wedding")
+      +pic(5,"wedding")
+      +pic(6,"birthday")
+      +pic(7,"birthday")
+      +pic(8,"birthday")
+      +pic(9,"wedding")
+      +pic(10,"birthday")
+      +pic(11,"birthday")
+      +pic(12,"birthday")
+      +pic(13,"birthday")
+      +pic(14,"wedding")
+      +pic(15,"birthday")
+      +pic(16,"wedding")
 
+    .filter-items
+      button.filter-label.active Все
+      button.filter-label(data-filter=".wedding") Свадьба
+      button.filter-label(data-filter=".birthday") День рождения
+
+    .loader
+      .loader_inner
+
+    include /includes/scripts.jade

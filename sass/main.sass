@@ -9,23 +9,14 @@ $color-bg: #181818
 $color-grey: #434343
 $color-grey-light: #212121
 $color-white-light: #b2b2b2
+$color-bg-content: #fafafa
 $color-bg-aside: #111
+$color-bg-form: #2e2e2e
+$color-form: #5b5b5b
 
 $min-width: 320
 
-
-@mixin font-size-em($size)
-  font-size: $size / $font-size-base * 1em
-
-@mixin line-height-em($size)
-  line-height: $size / $font-size-base * 1em
-
-@mixin transition($property, $time)
-  -webkit-transition: $property $time
-  -moz-transition: $property $time
-  -ms-transition: $property $time
-  -o-transition: $property $time
-  transition: $property $time
+@import 'mixins'
 
 
 body
@@ -34,7 +25,7 @@ body
   font-size: $font-size-base * 1px
   min-width: $min-width * 1px
   position: relative
-  line-height: 1.42857
+  line-height: 1.7
   -webkit-font-smoothing: antialised
   overflow-x: hidden
   background-color: $color-bg
@@ -42,11 +33,11 @@ body
 
 body input:focus:required:invalid,
 body textarea:focus:required:invalid
-  color: red
+  //color: red
 
 body input:required:valid,
 body textarea:required:valid
-  color: green
+  //color: green
 
 .left-side
   background-color: $color-bg-aside
@@ -148,10 +139,124 @@ nav
     display: block
     overflow: hidden
     width: 320px
+    min-height: 50px
   img
     display: block
     max-width: 100%
+    @include transition(all, 15s)
+  img:hover
+    @include scale(5)
 
+.filter-items
+  position: fixed
+  bottom: 0
+  color: white
+  background-color: $color-bg
+  right: 0
+  text-align: right
+  width: 100%
+  padding: 10px 10px 0 10px
+
+.filter-label
+  background-color: transparent
+  border-color: white
+  padding: 5px 15px
+  margin: 0 3px 15px
+  font-size: 12px
+  letter-spacing: 3px
+  opacity:  .4
+  border: 1px solid white
+  @include transition(all, 0.5s)
+
+.filter-label.active,
+.filter-label:hover
+  background-color: tomato
+  opacity: 1
+  border-color: tomato
+
+
+.inside
+  background-color: $color-bg-content
+  color: $color-grey
+
+.inside .content
+  padding: 70px 10% 50px
+
+.content-header
+  text-align: center
+  img
+    width: 220px
+    height: 220px
+    border-radius: 50%
+    margin-bottom: 35px
+  p
+    letter-spacing: 3px
+    padding-bottom: 10px
+
+.content-body
+  p
+    font-size: 16px
+
+.content-body.contacts
+  margin-top: 35px
+  h3
+    font-size: 22px
+
+
+ul.contacts-list,
+ul.contacts-list li
+  margin: 0 0 40px
+  padding: 0
+  list-style-type: none
+  
+
+.contacts-list
+  i
+    vertical-align: middle
+    font-size: 28px
+    margin-right: 5px
+    margin-bottom: 10px
+  a
+    text-decoration: none
+    color: tomato
+    font-size: 16px
+
+.form-contacts
+  form
+    background-color: $color-bg
+    padding: 30px
+    color: white
+
+.callback
+  h3
+    margin-top: 0
+    margin-bottom: 25px
+    text-align: center
+  lable
+    display: inline-block
+    width: 100%
+    font-size: 13px
+    letter-spacing: 3px
+    margin-bottom: 15px
+    color: $color-form
+  input, 
+  textarea
+    display: block
+    width: 100%
+    max-width: 100%
+    border: 1px solid $color-grey
+    background-color: $color-bg-form
+    color: white
+    padding: 10px
+    margin-top: 5px
+
+.button
+  display: block
+  background-color: tomato
+  margin: 15px auto 10px
+  padding: 5px 20px
+  font-size: 16px
+  border: none
 
 .hidden
   display: none
@@ -159,3 +264,4 @@ nav
 @import 'media'
 @import 'button'
 @import 'preloader'
+@import 'magnific'

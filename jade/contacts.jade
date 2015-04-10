@@ -3,8 +3,46 @@ extends /layout
 block title
   title Контакты
 
-block content
+block body
+  body.inside
+    include /includes/aside.jade
 
+    .content
+      .content-header
+        h1 Обратная связь
+        p Свяжитесь со мной одним из следующих способов
 
+      .content-body.contacts
+        mixin icon (iclass, title)
+          li  
+            h3
+              i(class="icon icon-basic-#{iclass}") 
+              |#{title}
+            p
+              block
 
-  .hidden
+        .row.form-contacts
+          .col-sm-6
+            ul.contacts-list
+              +icon("webpage-img-txt", "Мой сайт")(tag="a(href='http://webpage.com')")
+                a(href="#" target="_blank") www.webpage.com
+              +icon("map", "Адрес", "")
+                |14233 С-Перербург, ул. Весны, 36-12
+              +icon("smartphone", "Телефон")
+                a(href="tel:+78123254852") +7 812 325-48-52
+  
+          .col-sm-6
+            form#callback.callback
+              h3 Оставить заявку
+              lable Ваше имя
+                input(type="text" name="name" required)
+              lable Ваш e-mail
+                input(type="text" name="email" required)
+              lable Текст сообщения
+                textarea(name="message")
+              button.button(type="submit") Отправить заявку
+    .loader
+      .loader_inner
+
+    include /includes/scripts.jade
+    .hidden
