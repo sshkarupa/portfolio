@@ -6,7 +6,7 @@ var main = function() {
     horizrailenabled: false
   });
 
-  $(".gallery").css("min-height", $(document).height*2);
+  $(".gallery").css("min-height", $(document).height()*2);
 
   // button menu
   $(".btn_mnu").click(function() {
