@@ -1,0 +1,12 @@
+
+/* font-family: "Raleway" */
+@each $font-face in "RalewayRegular", "RalewayLight", "RalewayBold"
+  @font-face
+    font-family: $font-face
+    font-style: normal
+    font-weight: normal
+    src: url('../fonts/#{$font-face}/#{$font-face}.eot')
+    src: url('../fonts/#{$font-face}/#{$font-face}.eot?') format('eot')
+    src: url('../fonts/#{$font-face}/#{$font-face}.woff') format('woff')
+    src: url('../fonts/#{$font-face}/#{$font-face}.ttf') format('truetype')
+

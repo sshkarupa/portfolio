@@ -1,0 +1,53 @@
+.mfp-content
+  width: 100%
+
+.mfp-container
+  padding: 0
+
+img.mfp-img
+  display: block
+  max-width: 100%
+  height: auto
+  max-height: none !important
+  padding: 0
+
+.mfp-figure button.mfp-close
+  width: 50px
+  height: 50px
+  background-color: tomato
+  text-align: center
+  right: 5px
+  padding: 0
+
+/* magnific gallery opened */
+.mfp-zoom-out-cur .gallery
+  left: -100%
+
+.mfp-figure
+  background-color: $color-bg
+
+/* overlay at start */
+.mfp-fade.mfp-bg
+  opacity: 1
+
+/* overlay animate in */
+.mfp-fade.mfp-bg.mfp-ready
+  opacity: 1
+
+/* overlay animate out */
+.mfp-fade.mfp-bg.mfp-removing
+  opacity: 1
+
+
+/* content at start */
+.mfp-fade.mfp-wrap .mfp-content
+  left: 100%
+  @include transition(all, 1s)
+
+/* content animate it */
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content
+  left: 0
+
+/* content animate out */
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content
+  left: 100%

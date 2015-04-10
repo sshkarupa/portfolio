@@ -1,0 +1,267 @@
+//@import 'fonts'
+@import 'fonts'
+//@import url(http://fonts.googleapis.com/css?family=Roboto:400,700,300)
+
+$font-size-base: 14
+$font-family-base: RalewayRegular, sans-serif
+$font-family-light: RalewayLight, sans-serif
+$color-bg: #181818
+$color-grey: #434343
+$color-grey-light: #212121
+$color-white-light: #b2b2b2
+$color-bg-content: #fafafa
+$color-bg-aside: #111
+$color-bg-form: #2e2e2e
+$color-form: #5b5b5b
+
+$min-width: 320
+
+@import 'mixins'
+
+
+body
+  font-family: $font-family-base
+  font-weight: normal
+  font-size: $font-size-base * 1px
+  min-width: $min-width * 1px
+  position: relative
+  line-height: 1.7
+  -webkit-font-smoothing: antialised
+  overflow-x: hidden
+  background-color: $color-bg
+  color: white
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+  //color: red
+
+body input:required:valid,
+body textarea:required:valid
+  //color: green
+
+.left-side
+  background-color: $color-bg-aside
+  position: fixed
+  left: 0
+  top: 0
+  width: 50px
+  height: 100%
+  z-index: 10
+  color: white
+  @include transition(all, 0.5s)
+  overflow-x: hidden
+
+.left-side.active
+  width: 300px
+  .user-info
+    opacity: 1
+  nav
+    margin-top: 35px
+  li a::before
+    margin-left: -32px
+  li a:hover
+    text-indent: 5px
+  + .content
+    left: 250px
+    transition-delay: .5s
+
+.left-side__content
+  position: absolute
+  top: 50px
+  width: 100%
+  padding: 25px 0
+  white-space: nowrap
+
+nav
+  position: relative
+  z-index: 5
+  margin: -110px 0 35px
+  @include transition(all, 0.5s)
+  ul, li
+    padding: 0
+    margin: 0
+    list-style-type: none
+  li a
+    font-family: $font-family-light
+    display: block
+    color: $color-white-light
+    background-color: $color-bg-aside
+    padding: 10px 0 10px 70px
+    border-bottom: 1px solid $color-grey-light
+  li a:first-child
+    border-top: 1px solid $color-grey-light
+  li a:hover
+    text-decoration: none
+    background-color: tomato
+    color: white
+    @include transition(all, 0.5s)
+  li a::before
+    font-family: "linea-basic-10"
+    content: "^"
+    margin-left: -58px
+    margin-right: 19px
+    font-size: 20px
+    line-height: 0
+    display: inline-block
+    vertical-align: middle
+    @include transition(all, 0.5s)
+  li:nth-child(1) a::before
+    content: "^"
+  li:nth-child(2) a::before
+    content: "0"
+  li:nth-child(3) a::before
+    content: "Q"
+
+
+.user-info
+  text-align: center
+  opacity: 0
+  @include transition(all, 0.2s)
+  img
+    width: 120px
+    height: 120px
+    border-radius: 50%
+  h2
+    font-size: 16px
+  p
+    font-size: 12px
+    letter-spacing: 2px
+    color: $color-grey
+
+.content
+  position: relative
+  margin: 5px 5px 55px 55px
+  left: 0
+  @include transition(all, 1s)
+
+.gallery
+  a
+    display: block
+    overflow: hidden
+    width: 320px
+    min-height: 50px
+  img
+    display: block
+    max-width: 100%
+    @include transition(all, 15s)
+  img:hover
+    @include scale(5)
+
+.filter-items
+  position: fixed
+  bottom: 0
+  color: white
+  background-color: $color-bg
+  right: 0
+  text-align: right
+  width: 100%
+  padding: 10px 10px 0 10px
+
+.filter-label
+  background-color: transparent
+  border-color: white
+  padding: 5px 15px
+  margin: 0 3px 15px
+  font-size: 12px
+  letter-spacing: 3px
+  opacity:  .4
+  border: 1px solid white
+  @include transition(all, 0.5s)
+
+.filter-label.active,
+.filter-label:hover
+  background-color: tomato
+  opacity: 1
+  border-color: tomato
+
+
+.inside
+  background-color: $color-bg-content
+  color: $color-grey
+
+.inside .content
+  padding: 70px 10% 50px
+
+.content-header
+  text-align: center
+  img
+    width: 220px
+    height: 220px
+    border-radius: 50%
+    margin-bottom: 35px
+  p
+    letter-spacing: 3px
+    padding-bottom: 10px
+
+.content-body
+  p
+    font-size: 16px
+
+.content-body.contacts
+  margin-top: 35px
+  h3
+    font-size: 22px
+
+
+ul.contacts-list,
+ul.contacts-list li
+  margin: 0 0 40px
+  padding: 0
+  list-style-type: none
+  
+
+.contacts-list
+  i
+    vertical-align: middle
+    font-size: 28px
+    margin-right: 5px
+    margin-bottom: 10px
+  a
+    text-decoration: none
+    color: tomato
+    font-size: 16px
+
+.form-contacts
+  form
+    background-color: $color-bg
+    padding: 30px
+    color: white
+
+.callback
+  h3
+    margin-top: 0
+    margin-bottom: 25px
+    text-align: center
+  lable
+    display: inline-block
+    width: 100%
+    font-size: 13px
+    letter-spacing: 3px
+    margin-bottom: 15px
+    color: $color-form
+  input, 
+  textarea
+    display: block
+    width: 100%
+    max-width: 100%
+    border: 1px solid $color-grey
+    background-color: $color-bg-form
+    color: white
+    padding: 10px
+    margin-top: 5px
+
+.button
+  display: block
+  background-color: tomato
+  margin: 15px auto 10px
+  padding: 5px 20px
+  font-size: 16px
+  border: none
+
+.hidden
+  display: none
+
+@import 'media'
+@import 'button'
+@import 'preloader'
+@import 'magnific'

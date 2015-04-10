@@ -1,0 +1,24 @@
+//- includes/aside.jade
+
+aside.left-side
+  .btn_mnu(title="Меню")
+    .btn_row
+    .btn_row
+    .btn_row
+
+  .left-side__content
+    .user-info
+      img(src="img/photo.jpg", alt="Александр Прокопский")
+      h2 Александр Прокопский
+      p Фотограф, дизайнерб иллюстратор
+
+    mixin item (url, text)
+      li
+        a(href="#{url}") #{text}
+    nav
+      ul
+        +item("index.html", "Портфолио")
+        +item("about.html", "Обо мне")
+        +item("contacts.html", "Контакты")
+
+

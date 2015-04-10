@@ -1,0 +1,51 @@
+@mixin font-size-em($size)
+  font-size: $size / $font-size-base * 1em
+
+@mixin line-height-em($size)
+  line-height: $size / $font-size-base * 1em
+
+@mixin display-flex
+  display: -webkit-flex
+  display: -moz-flex
+  display: -ms-flex
+  display: -o-flex
+  display: flex
+
+@mixin transition($property, $time)
+  -webkit-transition: $property $time
+  -moz-transition: $property $time
+  -ms-transition: $property $time
+  -o-transition: $property $time
+  transition: $property $time
+
+// generic transform
+@mixin transform($transforms)
+  -moz-transform: $transforms
+  -o-transform: $transforms
+  -ms-transform: $transforms
+  -webkit-transform: $transforms
+  transform: $transforms
+
+// rotate
+@mixin rotate ($deg)
+  @include transform(rotate(#{$deg}deg))
+
+// scale
+@mixin scale($scale)
+  @include transform(scale($scale))
+
+// translate
+@mixin translate ($x, $y)
+  @include transform(translate($x, $y))
+
+// skew
+@mixin skew ($x, $y)
+  @include transform(skew(#{$x}deg, #{$y}deg))
+
+//transform origin
+@mixin transform-origin ($origin)
+  moz-transform-origin: $origin
+  -o-transform-origin: $origin
+  -ms-transform-origin: $origin
+  -webkit-transform-origin: $origin
+  transform-origin: $origin
